@@ -15,13 +15,39 @@
           </li>
         </div>
 
-        <div *ngIf="!onlyOdd">
+        <!-- <div *ngIf="!onlyOdd">
             <li *ngFor="let parni of even" 
             [ngClass]="{odd: parni % 2 !== 0}"
             [ngStyle]="{background: parni % 2 !==0 ? 'yellow' : 'red'}"
             class="list-group-item">
               {{parni}} 
             </li>
+          </div> -->
+
+          <div *appUnless="onlyOdd">
+            <li *ngFor="let parni of even" 
+            [ngClass]="{odd: parni % 2 !== 0}"
+            [ngStyle]="{background: parni % 2 !==0 ? 'yellow' : 'red'}"
+            class="list-group-item">
+              {{parni}} 
+            </li>
+          </div>
+
+          <div [ngSwitch]="value">
+          <p *ngSwitchCase="1">
+          Welju iz 1
+          </p>
+          <p *ngSwitchCase="2">
+          Welju iz 2
+          </p>
+          <p *ngSwitchCase="2">
+            Welju iz 5
+            </p>
+          <p *ngSwitchDefault>
+          Welju iz 10
+          </p>
+        
+            
           </div>
 
       </ul>
@@ -31,6 +57,8 @@
       <ng-template [ngIf]="!onlyOdd">
           <p>Only even</p>
         </ng-template>
+        <p basicDirective>Op op op</p>
+        <p appBetterDirective [defaultColor]="'yellow'" [highlightColor]="'red'">Op op op</p>
     </div>
   </div>
 </div>

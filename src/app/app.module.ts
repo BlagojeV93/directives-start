@@ -4,10 +4,16 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import { BasicDirective } from './directives/basic-directive';
+import { BetterDirectiveDirective } from './directives/better-directive.directive';
+import { UnlessDirective } from './directives/unless.directive';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+  BasicDirective,
+  BetterDirectiveDirective,
+  UnlessDirective
   ],
   imports: [
     BrowserModule,
