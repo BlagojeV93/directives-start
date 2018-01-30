@@ -7,13 +7,19 @@
       <ul class="list-group">
 
         <div *ngIf="onlyOdd">
-          <li *ngFor="let neparni of odd" class="list-group-item">
+          <li *ngFor="let neparni of odd" 
+          [ngClass]="{odd: neparni % 2 !== 0}"
+          [ngStyle]="{background: neparni % 2 !==0 ? 'yellow' : 'red'}"
+          class="list-group-item">
             {{neparni}}
           </li>
         </div>
 
         <div *ngIf="!onlyOdd">
-            <li *ngFor="let parni of even" class="list-group-item">
+            <li *ngFor="let parni of even" 
+            [ngClass]="{odd: parni % 2 !== 0}"
+            [ngStyle]="{background: parni % 2 !==0 ? 'yellow' : 'red'}"
+            class="list-group-item">
               {{parni}} 
             </li>
           </div>
